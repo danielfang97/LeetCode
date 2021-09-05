@@ -1,17 +1,15 @@
 public class sqrtx {
     public int mySqrt(int x) {
-        int result = 0;
-        while (true) {
-            if (result*result < x) {
-                result += 1;
-            } else if (result*result == x) {
-                break;
-            }
-            else {
-                result -= 1;
-                break;
-            }
+        if (x < 2) {
+            return x;
         }
-        return result;
+        double x0 = x;
+        double x1 = (x0 + x / x0) / 2.0;
+        while (Math.abs(x0 - x1) >= 1) {
+            x0 = x1;
+            x1 = (x0 + x / x0) / 2.0;
+        }
+
+        return (int)x1;
     }
 }
