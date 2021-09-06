@@ -9,7 +9,7 @@ public class FindTheDifference {
             if (stringS.containsKey(c)) {
                 stringS.put(c, stringS.get(c)+1);
             } else {
-                stringS.put(c, 0);
+                stringS.put(c, 1);
             }
         }
         for (char c : t.toCharArray()) {
